@@ -21,7 +21,7 @@ int main(void) {
     int found_errors = 0 ;                                                  // Errors that we FOUND from CRS function
 
 
-
+    //
     char P[6] = {'1','1','0','1','0','1'};
     int size_p = 6;
     //read_binary(P, &size_p);      // Binary Number P that is inserted from user
