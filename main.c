@@ -55,7 +55,7 @@ int main(void) {
 
         //D is a char array that is randomly created with maximum k bits (maximum because it may return 00011 so k=2 & not 5)
         get_Number(D, &size_d);
-        print_Str(D, size_d);
+        // print_Str(D, size_d);
 
 
         //2nd Stage                               Calculate CRC(FCS) for this message
@@ -64,33 +64,31 @@ int main(void) {
         // ΠΡΕΠΕΙ ΝΑ ΚΆΝΩ FREE ΤΟΝ ΧΏΡΟ ΠΟΥ ΔΈΣΜΕΥΣΑ
         get_2nkD(D_2nk, D, n);                                              // calls the function that calculates 2^(n-k) * D
 
-         print_Str(D_2nk, n);
+        // print_Str(D_2nk, n);
+
 
 
         // FCS = remainder of D_2nk / P  ( modulo-2 calculations !!! )
         FCS = get_R(D_2nk, n, P, size_p, &size_fcs);          // calls the function that calculates and returns the FCS sequence of n-k bits
-        print_Str(FCS, size_fcs);
+        // print_Str(FCS, size_fcs);
 
         T = get_T(D_2nk, n, FCS, size_fcs);  // calls the function that calculates and returns the  T  sequence of  n bits
-        print_Str(T, n);
+        // print_Str(T, n);
 
 
-        temp = BitErrorRate(T,n,BER);                              // Returns 1 if this Message was changed because of the transfer
-        known_errors += temp;
-        print_Str(T, n);
+        known_errors += BitErrorRate(T,n,BER);                              // Returns 1 if this Message was changed because of the transfer
+
+        // print_Str(T, n);
         if (0 == CRS(T, n, P, size_p) ){                                     // if T / P (modulo-2 calc) remainder is not 0 then WE HAVE AT LEAST ONE BIT CHANGE WHILE TRANSFERRING THE DATA
             //printf("There was a problem!!");
             found_errors ++ ;
-
-
-            exit(100);
         }
         free(FCS);
         free(T);
     }
 
-    printf("\nMessages that got an error: %d %.2f% \nMessages found to have an error from CRC: %d %.2f%\n",known_errors ,(known_errors/(double)max)*100,found_errors , (found_errors / (double)max) * 100);
-    printf("\nPercentage of messages that have an error and are not traced from CRC : %.2f%\n",((known_errors-found_errors)/(double)max)*100);
+    printf("\nMessages that got an error: %d %.8f% \nMessages found to have an error from CRC: %d %.8f%\n",known_errors ,(known_errors/(double)max)*100,found_errors , (found_errors / (double)max) * 100);
+    printf("\nPercentage of messages that have an error and are not traced from CRC : %.8f%\n",((known_errors-found_errors)/(double)known_errors)*100);
 
     return 0;
 }
