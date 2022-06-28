@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CSC.dir/main.c.obj"
-  "CMakeFiles/CSC.dir/main.c.obj.d"
+  "CMakeFiles/CSC.dir/CSC.c.obj"
+  "CMakeFiles/CSC.dir/CSC.c.obj.d"
   "CSC.exe"
   "CSC.exe.manifest"
   "CSC.pdb"

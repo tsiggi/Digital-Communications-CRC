@@ -82,7 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/chris tsingi/CLionProjects/CSC/main.c">
+		<Unit filename="C:/Users/chris tsingi/CLionProjects/CSC/CSC.c">
 			<Option target="CSC"/>
 		</Unit>
 		<Unit filename="C:/Users/chris tsingi/CLionProjects/CSC/CMakeLists.txt">

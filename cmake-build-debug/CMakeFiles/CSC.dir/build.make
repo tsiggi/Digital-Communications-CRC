@@ -68,28 +68,28 @@ include CMakeFiles/CSC.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/CSC.dir/flags.make
 
-CMakeFiles/CSC.dir/main.c.obj: CMakeFiles/CSC.dir/flags.make
-CMakeFiles/CSC.dir/main.c.obj: ../main.c
-CMakeFiles/CSC.dir/main.c.obj: CMakeFiles/CSC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\chris tsingi\CLionProjects\CSC\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/CSC.dir/main.c.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/CSC.dir/main.c.obj -MF CMakeFiles\CSC.dir\main.c.obj.d -o CMakeFiles\CSC.dir\main.c.obj -c "C:\Users\chris tsingi\CLionProjects\CSC\main.c"
+CMakeFiles/CSC.dir/CSC.c.obj: CMakeFiles/CSC.dir/flags.make
+CMakeFiles/CSC.dir/CSC.c.obj: ../CSC.c
+CMakeFiles/CSC.dir/CSC.c.obj: CMakeFiles/CSC.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\chris tsingi\CLionProjects\CSC\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/CSC.dir/CSC.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/CSC.dir/CSC.c.obj -MF CMakeFiles\CSC.dir\CSC.c.obj.d -o CMakeFiles\CSC.dir\CSC.c.obj -c "C:\Users\chris tsingi\CLionProjects\CSC\CSC.c"
 
-CMakeFiles/CSC.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CSC.dir/main.c.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\chris tsingi\CLionProjects\CSC\main.c" > CMakeFiles\CSC.dir\main.c.i
+CMakeFiles/CSC.dir/CSC.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CSC.dir/CSC.c.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\chris tsingi\CLionProjects\CSC\CSC.c" > CMakeFiles\CSC.dir\CSC.c.i
 
-CMakeFiles/CSC.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CSC.dir/main.c.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\chris tsingi\CLionProjects\CSC\main.c" -o CMakeFiles\CSC.dir\main.c.s
+CMakeFiles/CSC.dir/CSC.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CSC.dir/CSC.c.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\chris tsingi\CLionProjects\CSC\CSC.c" -o CMakeFiles\CSC.dir\CSC.c.s
 
 # Object files for target CSC
 CSC_OBJECTS = \
-"CMakeFiles/CSC.dir/main.c.obj"
+"CMakeFiles/CSC.dir/CSC.c.obj"
 
 # External object files for target CSC
 CSC_EXTERNAL_OBJECTS =
 
-CSC.exe: CMakeFiles/CSC.dir/main.c.obj
+CSC.exe: CMakeFiles/CSC.dir/CSC.c.obj
 CSC.exe: CMakeFiles/CSC.dir/build.make
 CSC.exe: CMakeFiles/CSC.dir/linklibs.rsp
 CSC.exe: CMakeFiles/CSC.dir/objects1.rsp

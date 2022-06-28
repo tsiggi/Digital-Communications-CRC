@@ -3,4 +3,4 @@ project(CSC)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(CSC main.c main.c)
+add_executable(CSC CSC.c CSC.c)

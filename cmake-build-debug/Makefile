@@ -128,29 +128,29 @@ CSC/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CSC.dir\build.make CMakeFiles/CSC.dir/build
 .PHONY : CSC/fast
 
-main.obj: main.c.obj
-.PHONY : main.obj
+CSC.obj: CSC.c.obj
+.PHONY : CSC.obj
 
 # target to build an object file
-main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CSC.dir\build.make CMakeFiles/CSC.dir/main.c.obj
-.PHONY : main.c.obj
+CSC.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CSC.dir\build.make CMakeFiles/CSC.dir/CSC.c.obj
+.PHONY : CSC.c.obj
 
-main.i: main.c.i
-.PHONY : main.i
+CSC.i: CSC.c.i
+.PHONY : CSC.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CSC.dir\build.make CMakeFiles/CSC.dir/main.c.i
-.PHONY : main.c.i
+CSC.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CSC.dir\build.make CMakeFiles/CSC.dir/CSC.c.i
+.PHONY : CSC.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+CSC.s: CSC.c.s
+.PHONY : CSC.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CSC.dir\build.make CMakeFiles/CSC.dir/main.c.s
-.PHONY : main.c.s
+CSC.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CSC.dir\build.make CMakeFiles/CSC.dir/CSC.c.s
+.PHONY : CSC.c.s
 
 # Help Target
 help:
@@ -161,9 +161,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... CSC
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... CSC.obj
+	@echo ... CSC.i
+	@echo ... CSC.s
 .PHONY : help
 
 
