@@ -30,7 +30,7 @@ Assignment ([*Assignment* description (GR)](https://github.com/tsingi-chris/CSC/
 - You can find more information about this assignment at [my report (GR)](https://github.com/tsingi-chris/CSC/blob/master/DC-PROJECT-2021-2022.pdf) [💾](https://github.com/tsingi-chris/CSC/raw/master/DC-CSC%20REPORT.pdf).
 - Inforamtion for CSC ([Wiki](https://en.wikipedia.org/wiki/Cyclic_redundancy_check))
 
-This simulation is running for:
+This simulation is running for :
 - k = 20 ( Bits of the message that we want to transmit )
 - P = 110101  ( Predetermined Const )
 - Ber = 0.001 ( Bit Error Rate )
