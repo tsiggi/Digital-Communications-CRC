@@ -15,7 +15,7 @@ H εργασία ([Εκφώνηση της *εργασίας*](https://github.co
 - CRC (Cyclic Redundancy Check) χρησιμοποιούνται στην ανίχνευση σφαλμάτων μεταδιδόμενης πληροφορίας.
 - Τα σχόλια του κώδικα μπορούν να φανούν χρήσιμα στην κατανόηση.
 - Περισσότερες πληροφορίες μπορούν να αντληθούν μέσα απο την [αναφορά (GR)](https://github.com/tsingi-chris/Digital-Comunication-CRC/blob/master/DC-CRC%20REPORT.pdf) [💾](https://github.com/tsingi-chris/Digital-Comunication-CRC/raw/master/DC-CRC%20REPORT.pdf).
-- Πληροφορίες για CRC ([Wiki](https://en.wikipedia.org/wiki/Cyclic_redundancy_check))
+- Πληροφορίες για CRC ([wikipedia](https://en.wikipedia.org/wiki/Cyclic_redundancy_check))
 - Η προσομοίωση έχει υλοποιηθεί για :
     - k = 20        ( Bits του μηνύματος που θέλουμε να μεταδώσουμε  )
     - P = 110101    ( Προκαθορισμένη Σταθερά )
@@ -34,7 +34,7 @@ Assignment ([*Assignment* description (GR)](https://github.com/tsingi-chris/Digi
 - CRC (Cyclic Redundancy Check) are used for detecting errors in trasmitted data.
 - Code comments can help understand the hole process.
 - You can find more information about this assignment at [my report (GR)](https://github.com/tsingi-chris/Digital-Comunication-CRC/blob/master/DC-CRC%20REPORT.pdf) [💾](https://github.com/tsingi-chris/Digital-Comunication-CRC/raw/master/DC-CRC%20REPORT.pdf).
-- Inforamtion for CRC ([Wiki](https://en.wikipedia.org/wiki/Cyclic_redundancy_check))
+- Inforamtion for CRC ([wikipedia](https://en.wikipedia.org/wiki/Cyclic_redundancy_check))
 - This simulation was implemented for :
     - k = 20        ( Bits of the message that we want to transmit )
     - P = 110101    ( Predetermined Const )
