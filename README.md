@@ -14,7 +14,7 @@ H εργασία ([Εκφώνηση της *εργασίας*](https://github.co
 
 
 ### Digital Communication CSC Project
-Assignment ([*Assignment* description (GR)](https://github.com/tsingi-chris/CSC/raw/master/DC-PROJECT-2021-2022.pdf) for the course [Digital Communication](https://elearning.auth.gr/course/view.php?id=4101) (Spring 2020/21) at the computer science department @[CSD](https://www.csd.auth.gr/en/).
+Assignment ([*Assignment* description (GR)](https://github.com/tsingi-chris/CSC/raw/master/DC-PROJECT-2021-2022.pdf)) for the course [Digital Communication](https://elearning.auth.gr/course/view.php?id=4101) (Spring 2020/21) at the computer science department @[CSD](https://www.csd.auth.gr/en/).
 
 ### Information
 - Code writen in C language with CLion.
