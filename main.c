@@ -1,14 +1,25 @@
+/** * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                                                   *
+*                           ΙΟΥΝΙΟΣ 2022                            *
+*								                                    *
+*                       ΨΗΦΙΑΚΕΣ ΕΠΙΚΟΙΝΩΝΙΕΣ	                    *
+*		                        CSC			                        *
+*								                                    *
+* 	             ΧΡΗΣΤΟΣ-ΑΛΕΞΑΝΔΡΟΣ ΤΣΙΓΓΙΡΟΠΟΥΛΟΣ	                *
+* 			                 ΑΕΜ : 3872		                        *
+*								                                    *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 #include <stdio.h>     /* printf, scanf, puts, NULL */
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
-#define k 20
-#define BER 0.001
-#define max 1000000000
+#define k 20                                                // SIZE OF MESSAGE DATA
+#define BER 0.001                                           // BIT ERROR RATE
+#define max 1000000000                                      // NUMBER OF MESSAGES
 
-void print_Str(char*, int);                                                 // used for debugging
-void read_binary(char*, int*);
-int check_HelpingFunction(const char*, int*);
-void get_Number(char*, int*);
+void print_Str(char*, int);                                                 // NOT USED! used for debugging   Prints string
+void read_binary(char*, int*);                                              // NOT USED! used for debugging   Reads & Checks binary input
+int check_HelpingFunction(const char*, int*);                               // NOT USED! used only in read_binary
+void create_Message(char*);
 void get_2nkD(char *,const char*, int);
 char* get_R(const char* D_2nk, int n,char* P,int size_p,int* size_of_r);
 int subtract_mod2(char* ,const char* ,int);
@@ -24,81 +35,105 @@ int main(void) {
 
     time_t t;
 
-    //
     char P[6] = {'1','1','0','1','0','1'};
     int size_p = 6;
-    //read_binary(P, &size_p);      // Binary Number P that is inserted from user
+    //read_binary(P, &size_p);                                          // Binary Number P that is inserted from user
     //print_Str(P,size_p);
 
     // initialize random seed: /
     srand (time(&t));
 
     int n = k + size_p - 1;                                             // n = size of D_2nk and T
-    int size_d;
     int size_fcs;                                                       // size of FCS
     char D[k] = {0};
     char *D_2nk = malloc(n * sizeof(char));                        //initialize the 2^(n-k) * D  that has n bits
     char *T;
     char *FCS;
 
-    int temp = 0;
 
 
     for(int j=0;j<=max;j++) {
 
-        if(j%5000000 == 0)
-            printf("Everything good so far. Done = %.1f%\n",(j/(1.0*max))*100);
+        if(j%1000000 == 0){
+            printf("Done = %.1f%\n",(j/(1.0*max))*100);
+            //printf("\x1b[A");         //clears the screen in LINUX
+        }
 
-
-        // 1st Stage                            Create a binary message, with the same possibility for 0,1 in every position
-
+//--------------------------------- 1st Stage ---------------------------------
+// Create a binary message, with the same possibility for 0,1 in every position
 
         //D is a char array that is randomly created with maximum k bits (maximum because it may return 00011 so k=2 & not 5)
-        get_Number(D, &size_d);
-        // print_Str(D, size_d);
+        create_Message(D);
+        // print_Str(D,k);                                                              // Debugging
 
 
-        //2nd Stage                               Calculate CRC(FCS) for this message
-        //char F[]={'1','0','1','0','0','0','1','1','0','1'};               // Array for testing
+//--------------------------------- 2nd Stage ---------------------------------
+//                      Calculate D*2^(n-k) for this message
 
-        // ΠΡΕΠΕΙ ΝΑ ΚΆΝΩ FREE ΤΟΝ ΧΏΡΟ ΠΟΥ ΔΈΣΜΕΥΣΑ
-        get_2nkD(D_2nk, D, n);                                              // calls the function that calculates 2^(n-k) * D
+        // calls the function that calculates 2^(n-k) * D
+        get_2nkD(D_2nk, D, n);
+        // print_Str(D_2nk, n);                                                         // Debugging
 
-        // print_Str(D_2nk, n);
 
-
+//--------------------------------- 3rd Stage ---------------------------------
+//                      Calculate CRC(FCS) for this message
 
         // FCS = remainder of D_2nk / P  ( modulo-2 calculations !!! )
-        FCS = get_R(D_2nk, n, P, size_p, &size_fcs);          // calls the function that calculates and returns the FCS sequence of n-k bits
-        // print_Str(FCS, size_fcs);
+        // calls the function that calculates and returns the FCS sequence of n-k bits
+        FCS = get_R(D_2nk, n, P, size_p, &size_fcs);
+        // print_Str(FCS, size_fcs);                                                    // Debugging
 
-        T = get_T(D_2nk, n, FCS, size_fcs);  // calls the function that calculates and returns the  T  sequence of  n bits
-        // print_Str(T, n);
+//--------------------------------- 4th Stage ---------------------------------
+//                 Calculate T = D*2^(n-k) + FCS for this message
+
+        // calls the function that calculates and returns the  T  sequence of  n bits
+        T = get_T(D_2nk, n, FCS, size_fcs);
+        // print_Str(T, n);                                                             // Debugging
 
 
-        known_errors += BitErrorRate(T,n,BER);                              // Returns 1 if this Message was changed because of the transfer
+//--------------------------------- 5th Stage ---------------------------------
+//                       Calculate T' = RECEIVED MESSAGE
 
-        // print_Str(T, n);
-        if (0 == CRS(T, n, P, size_p) ){                                     // if T / P (modulo-2 calc) remainder is not 0 then WE HAVE AT LEAST ONE BIT CHANGE WHILE TRANSFERRING THE DATA
-            //printf("There was a problem!!");
+        // Returns 1 if this Message was changed because of the transfer
+        known_errors += BitErrorRate(T,n,BER);
+        // print_Str(T, n);                                                             // Debugging
+
+
+//--------------------------------- 6th Stage ---------------------------------
+//                           Find if T' has an ERROR
+
+        // if T / P (modulo-2 calc) remainder is not 0 then WE HAVE AT LEAST ONE BIT CHANGED WHILE TRANSFERRING THE DATA
+        if (0 == CRS(T, n, P, size_p) ){
+            //printf("There was a problem!!");                                          // Debugging
             found_errors ++ ;
         }
-        free(FCS);
-        free(T);
+        free(FCS);      // free space
+        free(T);        // free space
     }
 
-    printf("\nMessages that got an error: %d %.8f% \nMessages found to have an error from CRC: %d %.8f%\n",known_errors ,(known_errors/(double)max)*100,found_errors , (found_errors / (double)max) * 100);
+    printf("\n\nCSC Simulation has finished.\nThe results are:\n\n");
+    printf("\nMessages that got an error: %d %.7f% \nMessages found to have an error from CRC: %d %.7f%\n",known_errors ,(known_errors/(double)max)*100,found_errors , (found_errors / (double)max) * 100);
     printf("\nPercentage of messages that have an error and are not traced from CRC : %.8f%\n",((known_errors-found_errors)/(double)known_errors)*100);
 
+
+    system("pause");
     return 0;
 }
-
+/** Input : *String = that we want to print , N = size of string
+ *  Output : Prints one by one every character of the string
+ *  Return : void
+ */
 void print_Str(char* str,int n){
     for(i = 0; i< n;i++)
         printf("%c",str[i]);
     printf("\n");
 }
 
+/** Input : *String = address of a string , *size = address of the size of string
+ *  Asks for a string input. We save input at input address. Checks if  string
+ *  is binary with check_HelpingFunction() and updated the size value
+ *  Return : void
+ */
 void read_binary(char *str,int *size){
     // str = store the input (BINARY) as an array of char (0,1)
     // size = size of STR
@@ -117,6 +152,10 @@ void read_binary(char *str,int *size){
     }
 }
 
+/** Input : *p = string that we want to check , *size = address of the size of string
+ *  Checks each and every char of the string if the value is 0 or 1
+ *  Return : 0 if every char is 0 or 1 , else returns 1       (0=Binary,1=NotBinary)
+ */
 int check_HelpingFunction(const char* p,int *size){
     if(p[0]=='0')
         return 1;
@@ -131,19 +170,21 @@ int check_HelpingFunction(const char* p,int *size){
     return 0;
 }
 
-void get_Number(char* D, int* size){
+/** Input : *D = address of a string with size = k
+ *  Initializes every char of the string with '0' or '1'  (SAME POSIBILITY)
+ *  Return : void
+ */
+void create_Message(char* D){
     for(i = 0; i < k; i++ ){
         double foo = (double)rand()/(double)RAND_MAX;
         D[i] = foo>0.5 ? '1' : '0';
     }
-    for(i=0; i < k;i++){
-        if(D[i]=='1'){
-            *size = k - i;
-            i = k;
-        }
-    }
 }
 
+/** Input : *D_2nk = address of a string with size = n, D = address of a string with size = k, n = size of D_2nk
+ *  Stores at the first k positions of D_2nk the D string and in the last n-k position '0'
+ *  Return : void
+ */
 void get_2nkD(char *D_2nk, const char* D , int n) {
     for (i = 0; i < n; i++) {
         if (i < k)
@@ -153,30 +194,34 @@ void get_2nkD(char *D_2nk, const char* D , int n) {
     }
 }
 
+/** Input : *D_2nk = address of a string with size = n, n = size of D_2nk
+ *  Input : P = address of the predefined string , size_p = The size of P
+ *  Calculates the remainder of D_2nk / P           ( XOR / )
+ *  Creates a String : and initializes it with the remainder
+ *  Return : the created String
+ */
 char* get_R(const char* D_2nk, int n,char* P,int size_p,int* size_of_r){
     int count = 0 , c1 = 0;
     char *temp = malloc(size_p* sizeof(char));
+    // initialize temp
     for(i=0;i<size_p;i++)
         temp[i]=D_2nk[i];
-    //print_Str(P,size_p);
-    //print_Str(temp,size_p);
+
     while(n-count>=size_p){
-        c1 = subtract_mod2(temp,P,size_p);
+        // temp / p       (xor /)
+        c1 = subtract_mod2(temp,P,size_p);      // c1 = missing elements of temp
         count += c1;
-        //print_Str(P,size_p);
-        //print_Str(temp,size_p);
-        //printf(" %d \n",c1);
 
         i = - c1 ;
+        // updates temp  ( inorder not to have missing elements ) and be ready for the next (xor /)
         while(1){
             if(i == 0 || count+size_p+i == n)
                 break;
-            //printf("%d %d %d %d\n",i,count,size_p+i , count+size_p+i);
             temp[size_p+i] = D_2nk[count+size_p+i];
-            //print_Str(temp,size_p);
             i++;
         }
     }
+    // Calculates temp size
     count = 0;
     for(i=size_p-1;i>=0;i--){
         if(temp[i]=='-')
@@ -189,6 +234,12 @@ char* get_R(const char* D_2nk, int n,char* P,int size_p,int* size_of_r){
     return temp;
 }
 
+/** Input : *temp = address of dividend
+ *  Input : P = address of divisor , size_p = The size of P & temp
+ *  Calculates the remainder of temp / P           ( XOR / )
+ *  and stores the result in temp
+ *  Return : the missing elements of temp after the division
+ */
 int subtract_mod2(char* temp,const char* p,int size_of_p)
 {
     int flag=0,count=0,j=0;
@@ -209,27 +260,38 @@ int subtract_mod2(char* temp,const char* p,int size_of_p)
             j++;
         }
     }
-
+    // temp = remainder
     for(;j<size_of_p;j++)
         temp[j]='-';
 
     return count;
 }
 
+/** Input : *D_2nk = address of a string with size = n, size_of_D2nk = size of D_2nk
+ *  Input : FSC = address of the remainder string , size_of_FCS = The size of FCS
+ *  Creates a new string with size n .
+ *  Initializes the first k positions with D_2nk
+ *  Initializes the last n-k positions with FCS
+ *  Return : the created String
+ */
 char* get_T(const char* D_2nk,int size_of_D2nk, const char* FSC, int size_of_FCS){
     char * T = malloc(size_of_D2nk * sizeof(char));
-
-
     for(i = 0 ; i < size_of_D2nk ; i++ )
         T[i] = D_2nk[i];
 
-    for(i = 1; i <= size_of_FCS; i++){
+    for(i = 1; i <= size_of_FCS; i++)
         T[size_of_D2nk - i] = FSC[size_of_FCS -i];
-    }
 
     return T ;
 }
 
+/** Input : *Τ = address of the arrived message , size_of_T = size of T
+ *  Input : P = address of the predefined string , size_of_p = The size of P
+ *  Checks if remainder of T / P is 0       (XOR /)
+ *  if it is then CRC did not find an error
+ *  else there is for sure an error
+ *  Return : 0 if CRC finds an error , 1 otherwise
+ */
 int CRS(char* T, int size_of_T, char* P, int size_of_p){
     int int_temp;
     char *temp = get_R(T, size_of_T, P,size_of_p,&int_temp);
@@ -242,14 +304,19 @@ int CRS(char* T, int size_of_T, char* P, int size_of_p){
     }
     free(temp);
     return 1;                               // Everything is Good
-
 }
 
+/** Input : *Τ = address of final message, size_of_T = size of T
+ *  Input : ber = bit error rate
+ *  Uses a random function that returns a value [0...1]
+ *  For every char of T string if random < ber change char
+ *  Return : 1 if we have at least one change, 0 otherwise
+ */
 int BitErrorRate(char* T,int size_of_T ,double ber){
     int flag = 0;
 
     for(i=0;i<size_of_T;i++){
-        double foo = (double)rand()/(double)RAND_MAX;
+        double foo = (double)rand()/(double)RAND_MAX;   // foo = [0..1]
         if( foo < ber ){
             T[i] = T[i]=='0' ? '1' : '0';
             flag++ ;
@@ -257,4 +324,5 @@ int BitErrorRate(char* T,int size_of_T ,double ber){
     }
     return flag>0 ? 1 : 0;
 }
+
 
