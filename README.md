@@ -35,8 +35,8 @@ Assignment ([*Assignment* description (GR)](https://github.com/tsingi-chris/Digi
 - You can find more information about this assignment at [my report (GR)](https://github.com/tsingi-chris/Digital-Comunication-CSC/blob/master/DC-CSC%20REPORT.pdf) [💾](https://github.com/tsingi-chris/Digital-Comunication-CSC/raw/master/DC-CSC%20REPORT.pdf).
 - Inforamtion for CSC ([Wiki](https://en.wikipedia.org/wiki/Cyclic_redundancy_check))
 - This simulation is running for :
-    k = 20 ( Bits of the message that we want to transmit )
-    P = 110101  ( Predetermined Const )
-    Ber = 0.001 ( Bit Error Rate )
-    The final transmited message has n = k + p_size - 1 = 20+6-1 = 25 bits. 
+    - k = 20 ( Bits of the message that we want to transmit )
+    - P = 110101  ( Predetermined Const )
+    - Ber = 0.001 ( Bit Error Rate )
+    - The final transmited message has n = k + p_size - 1 = 20+6-1 = 25 bits. 
 
