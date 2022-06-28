@@ -10,7 +10,7 @@ H εργασία ([Εκφώνηση της *εργασίας*](https://github.co
 
 ### Πληροφορίες
 - Η εργασία αυτή είναι μια CRC προσομοίωση.
-- Κώδικας γραμμένος σε C μέσα απο το CLion.
+- Κώδικας γραμμένος σε C μέσα απο το [CLion](https://www.jetbrains.com/clion/).
 - CSC (Cyclic Redundancy Check) χρησιμοποιούνται στην ανίχνευση σφαλμάτων μεταδιδόμενης πληροφορίας.
 - Τα σχόλια του κώδικα μπορούν να φανούν χρήσιμα στην κατανόηση.
 - Περισσότερες πληροφορίες μπορούν να αντληθούν μέσα απο την [αναφορά (GR)](https://github.com/tsingi-chris/Digital-Comunication-CSC/blob/master/DC-CSC%20REPORT.pdf) [💾](https://github.com/tsingi-chris/Digital-Comunication-CSC/raw/master/DC-CSC%20REPORT.pdf).
@@ -29,7 +29,7 @@ Assignment ([*Assignment* description (GR)](https://github.com/tsingi-chris/Digi
 
 ### Information
 - This project is a CRC simulation algorithm.
-- Code writen in C language with CLion.
+- Code writen in C language with [CLion](https://www.jetbrains.com/clion/).
 - CSC (Cyclic Redundancy Check) are used for detecting errors in trasmitted data.
 - Code comments can help understand the hole process.
 - You can find more information about this assignment at [my report (GR)](https://github.com/tsingi-chris/Digital-Comunication-CSC/blob/master/DC-CSC%20REPORT.pdf) [💾](https://github.com/tsingi-chris/Digital-Comunication-CSC/raw/master/DC-CSC%20REPORT.pdf).
