@@ -1,4 +1,5 @@
 # DIGITAL COMMUNICATION CSC Project
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/tsingi-chris/Digital-Comunication-CSC"> <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/tsingi-chris/Digital-Comunication-CSC">
 
 - [ReadMe in Greek](https://github.com/tsingi-chris/Digital-Comunication-CSC/blob/master/README.md#readme-in-greek)
 - [ReadMe in English](https://github.com/tsingi-chris/Digital-Comunication-CSC/blob/master/README.md#readme-in-english)
