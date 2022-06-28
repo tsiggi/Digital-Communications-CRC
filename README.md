@@ -9,7 +9,7 @@
 H εργασία ([Εκφώνηση της *εργασίας*](https://github.com/tsingi-chris/Digital-Comunication-CSC/blob/master/DC-PROJECT-2021-2022.pdf)) [💾](https://github.com/tsingi-chris/Digital-Comunication-CSC/raw/master/DC-PROJECT-2021-2022.pdf) στο μάθημα [Ψηφιακές Επικοινωνίες](https://elearning.auth.gr/course/view.php?id=4101) του τμήματος πληροφορικής του Α.Π.Θ για το ακαδημαϊκό έτος 2021/22. <br/>
 
 ### Πληροφορίες
-- P
+- Η εργασία αυτή είναι μια CRC προσομοίωση.
 - Κώδικας γραμμένος σε C μέσα απο το CLion.
 - CSC (Cyclic Redundancy Check) χρησιμοποιούνται στην ανίχνευση σφαλμάτων μεταδιδόμενης πληροφορίας.
 - Τα σχόλια του κώδικα μπορούν να φανούν χρήσιμα στην κατανόηση.
