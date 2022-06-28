@@ -1,5 +1,6 @@
 # DIGITAL COMMUNICATION CSC Project
-
+*Greek ReadMe
+*English ReadMe
 ### Εργασία CSC Ψηφιακές Επικοινωνίες 
 H εργασία ([Εκφώνηση της *εργασίας*](https://github.com/tsingi-chris/CSC/blob/master/DC-PROJECT-2021-2022.pdf)) [💾](https://github.com/tsingi-chris/CSC/raw/master/DC-PROJECT-2021-2022.pdf) στο μάθημα [Ψηφιακές Επικοινωνίες](https://elearning.auth.gr/course/view.php?id=4101) του τμήματος πληροφορικής του Α.Π.Θ για το ακαδημαϊκό έτος 2020/21. <br/>
 
