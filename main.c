@@ -112,7 +112,7 @@ int main(void) {
     }
 
     printf("\n\nCSC Simulation has finished.\nThe results are:\n\n");
-    printf("\nMessages that got an error: %d %.7f% \nMessages found to have an error from CRC: %d %.7f%\n",known_errors ,(known_errors/(double)max)*100,found_errors , (found_errors / (double)max) * 100);
+    printf("\nMessages that got an error: %.7f% \nMessages found to have an error from CRC: %.7f%\n" ,(known_errors/(double)max)*100 , (found_errors / (double)max) * 100);
     printf("\nPercentage of messages that have an error and are not traced from CRC : %.8f%\n",((known_errors-found_errors)/(double)known_errors)*100);
 
 
