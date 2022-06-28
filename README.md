@@ -1,7 +1,7 @@
 # DIGITAL COMMUNICATION CSC Project
 
-- Greek ReadMe
-- English ReadMe
+- [Greek ReadMe](https://github.com/tsingi-chris/CSC/blob/master/README.md#%CE%B5%CF%81%CE%B3%CE%B1%CF%83%CE%AF%CE%B1-csc-%CF%88%CE%B7%CF%86%CE%B9%CE%B1%CE%BA%CE%AD%CF%82-%CE%B5%CF%80%CE%B9%CE%BA%CE%BF%CE%B9%CE%BD%CF%89%CE%BD%CE%AF%CE%B5%CF%82)
+- [English ReadMe](https://github.com/tsingi-chris/CSC/blob/master/README.md#digital-communication-csc-project-1)
 
 ### Εργασία CSC Ψηφιακές Επικοινωνίες 
 H εργασία ([Εκφώνηση της *εργασίας*](https://github.com/tsingi-chris/CSC/blob/master/DC-PROJECT-2021-2022.pdf)) [💾](https://github.com/tsingi-chris/CSC/raw/master/DC-PROJECT-2021-2022.pdf) στο μάθημα [Ψηφιακές Επικοινωνίες](https://elearning.auth.gr/course/view.php?id=4101) του τμήματος πληροφορικής του Α.Π.Θ για το ακαδημαϊκό έτος 2020/21. <br/>
