@@ -3,7 +3,7 @@
 *                           ΙΟΥΝΙΟΣ 2022                            *
 *								                                    *
 *                       ΨΗΦΙΑΚΕΣ ΕΠΙΚΟΙΝΩΝΙΕΣ	                    *
-*		                        CSC			                        *
+*		                        CRC			                        *
 *								                                    *
 * 	             ΧΡΗΣΤΟΣ-ΑΛΕΞΑΝΔΡΟΣ ΤΣΙΓΓΙΡΟΠΟΥΛΟΣ	                *
 * 			                 ΑΕΜ : 3872		                        *
@@ -111,7 +111,7 @@ int main(void) {
         free(T);        // free space
     }
 
-    printf("\n\nCSC Simulation has finished.\nThe results are:\n\n");
+    printf("\n\nCRC Simulation has finished.\nThe results are:\n\n");
     printf("\nMessages that got an error: %.7f% \nMessages found to have an error from CRC: %.7f%\n" ,(known_errors/(double)max)*100 , (found_errors / (double)max) * 100);
     printf("\nPercentage of messages that have an error and are not traced from CRC : %.8f%\n",((known_errors-found_errors)/(double)known_errors)*100);
 
