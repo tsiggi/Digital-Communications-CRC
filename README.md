@@ -1,8 +1,8 @@
 # DIGITAL COMMUNICATION CRC Project
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/tsingi-chris/Digital-Communications-CRC"> <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/tsingi-chris/Digital-Communications-CRC">
 
-- [ReadMe in Greek](https://github.com/tsingi-chris/Digital-Communications-CRC/blob/master/README.md#readme-in-greek)
-- [ReadMe in English](https://github.com/tsingi-chris/Digital-Communications-CRC/blob/master/README.md#readme-in-english)
+- [ReadMe in Greek](https://github.com/tsingi-chris/Digital-Communications-CRC#readme-in-greek)
+- [ReadMe in English](https://github.com/tsingi-chris/Digital-Communications-CRC#readme-in-english)
 <br /><br />
 ## ReadMe in Greek
 
