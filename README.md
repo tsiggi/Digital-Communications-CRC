@@ -41,3 +41,13 @@ Assignment ([*Assignment* description (GR)](https://github.com/tsingi-chris/Digi
     - Ber = 0.001   ( Bit Error Rate )
     - The final transmited message has n = k + p_size - 1 = 20+6-1 = 25 bits. 
 
+
+
+
+
+
+
+[💾](https://drive.google.com/uc?id=12_Z7vSlZhqgaAaUrl4xjciHUgsV51M2Q&export=download)
+[💾](https://drive.google.com/uc?id=12QwoOYPo7wqlOuHvvJ9HzShujLad-fg6&export=download)
+[💾](https://drive.google.com/uc?id=12O0-M50BY4PrK-nVITrXkQM4HLwHgjYw&export=download)
+[💾](https://drive.google.com/uc?id=12Hbe_5N9Hro3vPWolU4VPrj7mUv_KiEx&export=download)
