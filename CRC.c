@@ -38,7 +38,7 @@ int main(void) {
     char P[6] = {'1','1','0','1','0','1'};
     int size_p = 6;
     //read_binary(P, &size_p);                                          // Binary Number P that is inserted from user
-    //print_Str(P,size_p);
+    //print_Str(P,size_p);                                              // Debugging
 
     // initialize random seed: /
     srand (time(&t));
@@ -55,6 +55,7 @@ int main(void) {
     for(int j=0;j<=max;j++) {
 
         if(j%1000000 == 0){
+            // Notifies the user about the simulation status
             printf("Done = %.1f%\n",(j/(1.0*max))*100);
             //printf("\x1b[A");         //clears the screen in LINUX
         }
