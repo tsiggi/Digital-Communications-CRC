@@ -14,7 +14,7 @@ H εργασία ([Εκφώνηση της *εργασίας*](https://github.co
 - Κώδικας γραμμένος σε C μέσα απο το [CLion](https://www.jetbrains.com/clion/).
 - CRC (Cyclic Redundancy Check) χρησιμοποιούνται στην ανίχνευση σφαλμάτων μεταδιδόμενης πληροφορίας.
 - Τα σχόλια του κώδικα μπορούν να φανούν χρήσιμα στην κατανόηση.
-- Περισσότερες πληροφορίες μπορούν να αντληθούν μέσα απο την [αναφορά] (https://github.com/tsingi-chris/Digital-Comunications-CRC/blob/master/DC-CRC%20REPORT.pdf) [💾](https://github.com/tsingi-chris/Digital-Comunications-CRC/raw/master/DC-CRC%20REPORT.pdf).
+- Περισσότερες πληροφορίες μπορούν να αντληθούν μέσα απο την [αναφορά](https://github.com/tsingi-chris/Digital-Comunications-CRC/blob/master/DC-CRC%20REPORT.pdf) [💾](https://github.com/tsingi-chris/Digital-Comunications-CRC/raw/master/DC-CRC%20REPORT.pdf).
 - Πληροφορίες για CRC ([wikipedia](https://en.wikipedia.org/wiki/Cyclic_redundancy_check))
 - Η προσομοίωση έχει υλοποιηθεί για :
     - k = 20        ( Bits του μηνύματος που θέλουμε να μεταδώσουμε  )
