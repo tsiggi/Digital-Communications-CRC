@@ -51,4 +51,4 @@ Assignment ([*Assignment* description (GR)](https://github.com/tsingi-chris/Digi
 [💾](https://drive.google.com/uc?id=12QwoOYPo7wqlOuHvvJ9HzShujLad-fg6&export=download)
 [💾](https://drive.google.com/uc?id=12O0-M50BY4PrK-nVITrXkQM4HLwHgjYw&export=download)
 [💾](https://drive.google.com/uc?id=12Hbe_5N9Hro3vPWolU4VPrj7mUv_KiEx&export=download)
-[💾](https://drive.google.com/uc?id=12eoQK4LFRXLyasIsoTqy_bLhwZpcSv3c&export=download)
+[💾](https://drive.google.com/uc?id=12aPtvu791ywmZ1vL5NwuBgUXCndvh2xJ&export=download)
